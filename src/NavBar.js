@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#0A0A0A',
     fontSize: 18,
-    width: 180,
+    width: 240,
+    paddingLeft: 60,
     alignSelf: 'center',
   },
   titleWrapper: {
@@ -112,18 +113,18 @@ const styles = StyleSheet.create({
   },
   leftButton: {
     width: 100,
-    height: 37,
+    height: 54,
     position: 'absolute',
     ...Platform.select({
       ios: {
         top: 20,
       },
       android: {
-        top: 8,
+        top: 0,
       },
     }),
-    left: 2,
-    padding: 8,
+    left: -30,
+    padding: 0,
   },
   barRightButtonText: {
     color: 'rgb(0, 122, 255)',
@@ -149,9 +150,14 @@ const styles = StyleSheet.create({
 
   },
   defaultImageStyle: {
-    height: 24,
+    height: 54,
     resizeMode: 'contain',
   },
+  titleImage: {
+    height: 54,
+    left: 40,
+    resizeMode: 'contain'
+  }
 });
 
 const propTypes = {
@@ -490,6 +496,7 @@ class NavBar extends React.Component {
       state.navigationBarBackgroundImage;
     const contents = (
       <View>
+        {this.props.titleImage && <Image source={this.props.titleImage} style={styles.titleImage} />}
         {renderTitle ? renderTitle(navProps) : state.children.map(this.renderTitle, this)}
         {renderBackButton(navProps) || renderLeftButton(navProps)}
         {renderRightButton(navProps)}
