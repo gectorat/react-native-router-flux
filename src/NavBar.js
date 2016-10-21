@@ -34,18 +34,22 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Dimensions
 } from 'react-native';
 import Actions from './Actions';
 import _drawerImage from './menu_burger.png';
 import _backButtonImage from './back_chevron.png';
-
 const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     color: '#0A0A0A',
     fontSize: 18,
-    width: 240,
-    paddingLeft: 60,
+    ...Platform.select({
+      android: {
+        width: 240,
+        paddingLeft: 60,
+      },
+    }),
     alignSelf: 'center',
   },
   titleWrapper: {
@@ -59,7 +63,14 @@ const styles = StyleSheet.create({
         top: 5,
       },
     }),
-    left: 0,
+    ...Platform.select({
+      ios: {
+        left: Dimensions.get('window').width/2.5,
+      },
+      android: {
+        left: 0,
+      },
+    }),
     right: 0,
   },
   header: {
@@ -68,7 +79,7 @@ const styles = StyleSheet.create({
     top: 0,
     ...Platform.select({
       ios: {
-        height: 64,
+        height: 74,
       },
       android: {
         height: 54,
@@ -156,7 +167,15 @@ const styles = StyleSheet.create({
   titleImage: {
     height: 54,
     left: 40,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    ...Platform.select({
+      ios: {
+        top: 20,
+      },
+      android: {
+        top: 0,
+      },
+    })
   }
 });
 
