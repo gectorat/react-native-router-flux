@@ -41,14 +41,18 @@ import _drawerImage from './menu_burger.png';
 import _backButtonImage from './back_chevron.png';
 const styles = StyleSheet.create({
   title: {
-    textAlign: 'center',
-    color: '#0A0A0A',
+    textAlign: 'left',
+    color: '#000',
     fontSize: 18,
+    fontFamily: 'SEBBasic-Medium',
     ...Platform.select({
       android: {
         width: 240,
         paddingLeft: 60,
       },
+      ios: {
+        width: 200,
+      }
     }),
     alignSelf: 'center',
   },
@@ -57,7 +61,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     ...Platform.select({
       ios: {
-        top: 20,
+        top: 25,
       },
       android: {
         top: 5,
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   header: {
-    backgroundColor: '#EFEFF2',
+    backgroundColor: 'rgb(242,242,242)',
     paddingTop: 0,
     top: 0,
     ...Platform.select({
@@ -165,12 +169,14 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   titleImage: {
-    height: 54,
-    left: 40,
+    height: 60,
+    left: 70,
+    width: 60,
+    position: 'absolute',
     resizeMode: 'contain',
     ...Platform.select({
       ios: {
-        top: 20,
+        top: 17,
       },
       android: {
         top: 0,
@@ -467,7 +473,7 @@ class NavBar extends React.Component {
               }),
               left: this.props.position.interpolate({
                 inputRange: [index - 1, index + 1],
-                outputRange: [200, -200],
+                outputRange: [150, -200],
               }),
               right: this.props.position.interpolate({
                 inputRange: [index - 1, index + 1],
