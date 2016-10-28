@@ -34,25 +34,23 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Dimensions
+  Dimensions,
+  PixelRatio
 } from 'react-native';
 import Actions from './Actions';
 import _drawerImage from './menu_burger.png';
 import _backButtonImage from './back_chevron.png';
 const styles = StyleSheet.create({
   title: {
-    textAlign: 'left',
+    textAlign: 'center',
     color: '#000',
-    fontSize: 18,
+    fontSize: (Platform.OS === 'ios') ? PixelRatio.getPixelSizeForLayoutSize(9) : PixelRatio.getPixelSizeForLayoutSize(6),
     fontFamily: 'SEBBasic-Medium',
     ...Platform.select({
       android: {
-        width: 240,
-        paddingLeft: 60,
+        // width: PixelRatio.getPixelSizeForLayoutSize(220),
+        paddingLeft: PixelRatio.getPixelSizeForLayoutSize(30),
       },
-      ios: {
-        width: 200,
-      }
     }),
     alignSelf: 'center',
   },
@@ -69,7 +67,7 @@ const styles = StyleSheet.create({
     }),
     ...Platform.select({
       ios: {
-        left: Dimensions.get('window').width/2.5,
+        left: PixelRatio.getPixelSizeForLayoutSize(30),
       },
       android: {
         left: 0,
@@ -78,7 +76,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   header: {
-    backgroundColor: 'rgb(242,242,242)',
+    backgroundColor: '#EFEFF2',
     paddingTop: 0,
     top: 0,
     ...Platform.select({
@@ -169,14 +167,12 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   titleImage: {
-    height: 60,
-    left: 70,
-    width: 60,
-    position: 'absolute',
+    height: 54,
+    left: 40,
     resizeMode: 'contain',
     ...Platform.select({
       ios: {
-        top: 17,
+        top: 20,
       },
       android: {
         top: 0,
@@ -473,7 +469,7 @@ class NavBar extends React.Component {
               }),
               left: this.props.position.interpolate({
                 inputRange: [index - 1, index + 1],
-                outputRange: [150, -200],
+                outputRange: [200, -200],
               }),
               right: this.props.position.interpolate({
                 inputRange: [index - 1, index + 1],
