@@ -44,35 +44,31 @@ const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     color: '#000',
-    fontSize: (Platform.OS === 'ios') ? PixelRatio.getPixelSizeForLayoutSize(9) : PixelRatio.getPixelSizeForLayoutSize(6),
-    fontFamily: 'SEBBasic-Medium',
-    ...Platform.select({
-      android: {
-        // width: PixelRatio.getPixelSizeForLayoutSize(220),
-        paddingLeft: PixelRatio.getPixelSizeForLayoutSize(30),
-      },
-    }),
+    fontSize: Dimensions.get('window').width * 0.006 * 7.5,
+    fontFamily: 'SEBBasic-Regular',
+    fontWeight: '400',
     alignSelf: 'center',
   },
   titleWrapper: {
     marginTop: 10,
+    overflow: 'hidden',
     position: 'absolute',
     ...Platform.select({
       ios: {
-        top: 25,
+        top: 28,
       },
       android: {
         top: 5,
       },
     }),
-    ...Platform.select({
-      ios: {
-        left: PixelRatio.getPixelSizeForLayoutSize(30),
-      },
-      android: {
-        left: 0,
-      },
-    }),
+    // ...Platform.select({
+    //   ios: {
+    //     left: PixelRatio.getPixelSizeForLayoutSize(60),
+    //   },
+    //   android: {
+    //     left: 0,
+    //   },
+    // }),
     right: 0,
   },
   header: {
@@ -156,8 +152,9 @@ const styles = StyleSheet.create({
     fontSize: 17,
   },
   backButtonImage: {
-    width: 13,
+    width: 20,
     height: 21,
+    // top: 4
   },
   rightButtonIconStyle: {
 
@@ -283,6 +280,9 @@ class NavBar extends React.Component {
               state.barButtonIconStyle,
               state.leftButtonIconStyle,
               childState.leftButtonIconStyle,
+              {
+                top: (Platform.OS === 'ios' ) ? 6 : -3,
+              }
             ]}
           />
         }
@@ -463,6 +463,13 @@ class NavBar extends React.Component {
             this.props.navigationState.titleStyle,
             childState.titleStyle,
             {
+              textAlign: (this.props.scenes.constructor == Array) ? 'left' : 'center',
+              width: (this.props.scenes.constructor == Array) ? 
+                ((Platform.OS === 'ios') ? PixelRatio.getPixelSizeForLayoutSize(90) : PixelRatio.getPixelSizeForLayoutSize(130)) : 
+                Dimensions.get('window').width,
+              paddingLeft: (this.props.scenes.constructor == Array) ? 
+                ((Platform.OS === 'ios') ? 0 : PixelRatio.getPixelSizeForLayoutSize(30)) :
+                ((Platform.OS === 'ios') ? 0 : PixelRatio.getPixelSizeForLayoutSize(0)),
               opacity: this.props.position.interpolate({
                 inputRange: [index - 1, index, index + 1],
                 outputRange: [0, this.props.titleOpacity, 0],
@@ -498,8 +505,8 @@ class NavBar extends React.Component {
       return (props) => <View style={wrapStyle}>{component(props)}</View>;
     };
 
-    const leftButtonStyle = [styles.leftButton, { alignItems: 'flex-start' }];
-    const rightButtonStyle = [styles.rightButton, { alignItems: 'flex-end' }];
+    const leftButtonStyle = [styles.leftButton, { alignItems: 'flex-end' }];
+    const rightButtonStyle = [styles.rightButton, { alignItems: 'flex-start' }];
 
     const renderLeftButton = wrapByStyle(selected.renderLeftButton, leftButtonStyle) ||
       wrapByStyle(selected.component.renderLeftButton, leftButtonStyle) ||
@@ -530,6 +537,9 @@ class NavBar extends React.Component {
           this.props.navigationBarStyle,
           state.navigationBarStyle,
           selected.navigationBarStyle,
+          {
+            backgroundColor: (this.props.scenes.constructor == Array) ? '#f2f2f2' : '#fff'
+          }
         ]}
       >
         {navigationBarBackgroundImage ? (
