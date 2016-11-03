@@ -465,7 +465,7 @@ class NavBar extends React.Component {
             {
               textAlign: (this.props.scenes.constructor == Array) ? 'left' : 'center',
               width: (this.props.scenes.constructor == Array) ? 
-                ((Platform.OS === 'ios') ? PixelRatio.getPixelSizeForLayoutSize(90) : PixelRatio.getPixelSizeForLayoutSize(130)) : 
+                ((Platform.OS === 'ios') ? Dimensions.get('window').width * 0.55 : PixelRatio.getPixelSizeForLayoutSize(130)) : 
                 Dimensions.get('window').width,
               paddingLeft: (this.props.scenes.constructor == Array) ? 
                 ((Platform.OS === 'ios') ? 0 : PixelRatio.getPixelSizeForLayoutSize(30)) :
