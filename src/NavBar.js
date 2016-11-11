@@ -301,6 +301,7 @@ class NavBar extends React.Component {
 
       const textStyle = [styles.barRightButtonText, self.props.rightButtonTextStyle,
         state.rightButtonTextStyle];
+        const textRightStyle = {fontSize: 14, left: 44, top:8, width: 40, color: 'rgb(76,143,167)'}
       const style = [styles.rightButton, self.props.rightButtonStyle, state.rightButtonStyle];
       if (state.rightButton) {
         let Button = state.rightButton;
@@ -328,7 +329,7 @@ class NavBar extends React.Component {
             onPress={onPress}
           >
             {rightTitle &&
-              <Text style={textStyle}>
+              <Text style={textRightStyle}>
                 {rightTitle}
               </Text>
             }
@@ -465,7 +466,7 @@ class NavBar extends React.Component {
             {
               textAlign: (this.props.scenes.constructor == Array) ? 'left' : 'center',
               width: (this.props.scenes.constructor == Array) ? 
-                ((Platform.OS === 'ios') ? Dimensions.get('window').width * 0.55 : PixelRatio.getPixelSizeForLayoutSize(130)) : 
+                ((Platform.OS === 'ios') ? Dimensions.get('window').width * 0.55 : Dimensions.get('window').width * 0.85) : 
                 Dimensions.get('window').width,
               paddingLeft: (this.props.scenes.constructor == Array) ? 
                 ((Platform.OS === 'ios') ? 0 : PixelRatio.getPixelSizeForLayoutSize(30)) :
