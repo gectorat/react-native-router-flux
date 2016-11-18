@@ -39,9 +39,10 @@ const {
 const styles = StyleSheet.create({
   animatedView: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: '#f2f2f2',
   },
   sceneStyle: {
+    backgroundColor: '#f2f2f2',
     flex: 1,
   },
 });
