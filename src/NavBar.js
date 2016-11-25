@@ -301,7 +301,7 @@ class NavBar extends React.Component {
 
       const textStyle = [styles.barRightButtonText, self.props.rightButtonTextStyle,
         state.rightButtonTextStyle];
-        const textRightStyle = {fontSize: 14, left: 44, top:8, width: 40, color: 'rgb(76,143,167)'}
+      const textRightStyle = {fontSize: 14, width: 48, height: ( Platform.OS === 'ios' ) ? 20 : 30, textAlign: 'right', color: 'rgb(76,143,167)'}
       const style = [styles.rightButton, self.props.rightButtonStyle, state.rightButtonStyle];
       if (state.rightButton) {
         let Button = state.rightButton;
@@ -329,9 +329,11 @@ class NavBar extends React.Component {
             onPress={onPress}
           >
             {rightTitle &&
+              <View style={{ flex: 1, justifyContent: 'center', top: 4,  alignItems: 'flex-end' }}>
               <Text style={textRightStyle}>
                 {rightTitle}
               </Text>
+              </View>
             }
             {state.rightButtonImage &&
               <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
@@ -451,10 +453,12 @@ class NavBar extends React.Component {
         key={childState.key}
         style={[
           styles.titleWrapper,
-          this.props.titleWrapperStyle,
+          this.props.titleWrapperStyle, { top: ( Platform.OS === 'ios' ) ? 27 : 10 }
         ]}
       >
         <Animated.Text
+          accessibility={ false }
+          allowFontScaling = { false }
           lineBreakMode="tail"
           numberOfLines={1}
           {...this.props.titleProps}
@@ -465,8 +469,9 @@ class NavBar extends React.Component {
             childState.titleStyle,
             {
               textAlign: (this.props.scenes.constructor == Array) ? 'left' : 'center',
+              height: 30,
               width: (this.props.scenes.constructor == Array) ? 
-                ((Platform.OS === 'ios') ? Dimensions.get('window').width * 0.55 : Dimensions.get('window').width * 0.85) : 
+                ((Platform.OS === 'ios') ? Math.ceil(Dimensions.get('window').width * 0.55) : Math.ceil(Dimensions.get('window').width * 0.85)) : 
                 Dimensions.get('window').width,
               paddingLeft: (this.props.scenes.constructor == Array) ? 
                 ((Platform.OS === 'ios') ? 0 : PixelRatio.getPixelSizeForLayoutSize(30)) :
@@ -483,6 +488,7 @@ class NavBar extends React.Component {
                 inputRange: [index - 1, index + 1],
                 outputRange: [-200, 200],
               }),
+              fontSize: (Platform.OS === 'ios') ? 13 : 18
             },
           ]}
         >
