@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   header: {
-    backgroundColor: '#EFEFF2',
+    backgroundColor: '#F2F2F2',
     paddingTop: 0,
     top: 0,
     ...Platform.select({
@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
     }),
     right: 0,
     left: 0,
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#828287',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
     position: 'absolute',
   },
   backButton: {
