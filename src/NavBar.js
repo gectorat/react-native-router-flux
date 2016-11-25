@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     color: '#000',
-    fontSize: Dimensions.get('window').width * 0.006 * 7.5,
+    fontSize: Math.round(Dimensions.get('window').width * 0.006 * 7),
     fontFamily: 'SEBBasic-Regular',
     fontWeight: '400',
     alignSelf: 'center',
