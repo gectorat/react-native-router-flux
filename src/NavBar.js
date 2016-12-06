@@ -301,7 +301,7 @@ class NavBar extends React.Component {
 
       const textStyle = [styles.barRightButtonText, self.props.rightButtonTextStyle,
         state.rightButtonTextStyle];
-      const textRightStyle = {fontSize: 14, width: 48, height: ( Platform.OS === 'ios' ) ? 20 : 30, textAlign: 'right', color: 'rgb(76,143,167)'}
+        const textRightStyle = {fontSize: 14, left: 44, top:8, width: 40, color: 'rgb(76,143,167)'}
       const style = [styles.rightButton, self.props.rightButtonStyle, state.rightButtonStyle];
       if (state.rightButton) {
         let Button = state.rightButton;
@@ -329,11 +329,9 @@ class NavBar extends React.Component {
             onPress={onPress}
           >
             {rightTitle &&
-              <View style={{ flex: 1, justifyContent: 'center', top: 4,  alignItems: 'flex-end' }}>
-              <Text style={textRightStyle}>
+              <Text accessible={false} allowFontScaling={false} style={textRightStyle}>
                 {rightTitle}
               </Text>
-              </View>
             }
             {state.rightButtonImage &&
               <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
