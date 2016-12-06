@@ -486,7 +486,7 @@ class NavBar extends React.Component {
                 inputRange: [index - 1, index + 1],
                 outputRange: [-200, 200],
               }),
-              fontSize: (Platform.OS === 'ios') ? 13 : 18
+              fontSize: Math.round(Dimensions.get('window').width * 0.006 * 7)
             },
           ]}
         >
