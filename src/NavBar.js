@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   titleWrapper: {
-    marginTop: 10,
+    marginTop: (Platform.OS === 'ios') ? 12 : 8,
     overflow: 'hidden',
     position: 'absolute',
     ...Platform.select({
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         top: 22,
       },
       android: {
-        top: 10,
+        top: 2,
       },
     }),
     right: 2,
