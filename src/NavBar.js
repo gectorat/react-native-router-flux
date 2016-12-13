@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         top: 22,
       },
       android: {
-        top: 10,
+        top: 11,
       },
     }),
     left: 2,
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         top: 22,
       },
       android: {
-        top: 2,
+        top: 1,
       },
     }),
     right: 2,
