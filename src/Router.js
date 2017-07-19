@@ -10,7 +10,11 @@ import React, {
   Component,
   PropTypes,
 } from 'react';
-import { BackAndroid } from 'react-native';
+
+/**
+ * quickfix is necessary because BackAndroid is deprecated in RN 0.46.1
+ */
+import { BackHandler as BackAndroid } from 'react-native';
 import NavigationExperimental from 'react-native-experimental-navigation';
 
 import Actions, { ActionMap } from './Actions';
