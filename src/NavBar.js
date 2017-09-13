@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#000',
     fontSize: Math.round(Dimensions.get('window').width * 0.006 * 7),
-    fontFamily: 'SEBBasic-Regular',
+    fontFamily: 'SEBSansSerif-Regular',
     fontWeight: '400',
     alignSelf: 'center',
   },
@@ -468,10 +468,10 @@ class NavBar extends React.Component {
             {
               textAlign: (this.props.scenes.constructor == Array) ? 'left' : 'center',
               height: 30,
-              width: (this.props.scenes.constructor == Array) ? 
-                ((Platform.OS === 'ios') ? Math.ceil(Dimensions.get('window').width * 0.55) : Math.ceil(Dimensions.get('window').width * 0.85)) : 
+              width: (this.props.scenes.constructor == Array) ?
+                ((Platform.OS === 'ios') ? Math.ceil(Dimensions.get('window').width * 0.55) : Math.ceil(Dimensions.get('window').width * 0.85)) :
                 Dimensions.get('window').width,
-              paddingLeft: (this.props.scenes.constructor == Array) ? 
+              paddingLeft: (this.props.scenes.constructor == Array) ?
                 ((Platform.OS === 'ios') ? 0 : PixelRatio.getPixelSizeForLayoutSize(30)) :
                 ((Platform.OS === 'ios') ? 0 : PixelRatio.getPixelSizeForLayoutSize(0)),
               opacity: this.props.position.interpolate({
