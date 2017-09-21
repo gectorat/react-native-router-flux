@@ -1,47 +1,43 @@
 {
-  "name": "react-native-router-flux",
-  "version": "3.36.0",
-  "description": "React Native Router using Flux architecture",
-  "repository": {
+  "_from": "github:gectorat/react-native-router-flux",
+  "_id": "react-native-router-flux@3.36.0",
+  "_inBundle": false,
+  "_integrity": "sha1-/lfpQgwhQzfnZldjDM/jyzU25+E=",
+  "_location": "/react-native-router-flux",
+  "_phantomChildren": {},
+  "_requested": {
     "type": "git",
-    "url": "https://github.com/aksonov/react-native-router-flux"
+    "raw": "react-native-router-flux@github:gectorat/react-native-router-flux",
+    "name": "react-native-router-flux",
+    "escapedName": "react-native-router-flux",
+    "rawSpec": "github:gectorat/react-native-router-flux",
+    "saveSpec": "github:gectorat/react-native-router-flux",
+    "fetchSpec": null,
+    "gitCommittish": "master"
   },
-  "main": "index.js",
-  "typings": "index.d.ts",
-  "scripts": {
-    "test": "mocha --compilers js:babel-core/register --require react-native-mock/mock",
-    "test:watch": "npm run test -- --watch",
-    "eslint": "eslint index.js src/ test/; exit 0;"
-  },
-  "keywords": [
-    "react-native",
-    "react-native-router",
-    "react-components",
-    "react-component",
-    "ios",
-    "android",
-    "flux",
-    "router",
-    "navigation"
+  "_requiredBy": [
+    "/"
   ],
+  "_resolved": "github:gectorat/react-native-router-flux#b48b56c22e9b413884052c60d7bc9242d6006afd",
+  "_spec": "react-native-router-flux@github:gectorat/react-native-router-flux",
+  "_where": "/Users/kes/Web/opsNew/Opsparing",
   "author": {
     "name": "Pavlo Aksonov",
     "email": "akso.nov@gmail.com",
     "url": "http://aksonov.com"
   },
-  "license": "MIT",
-  "maintainers": [
-    {
-      "name": "aksonov",
-      "email": "pavlo.aksonov@gmail.com"
-    }
-  ],
+  "bugs": {
+    "url": "https://github.com/aksonov/react-native-router-flux/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "react-addons-pure-render-mixin": "^15.6.0",
     "react-native-experimental-navigation": "0.26.x",
     "react-native-tabs": "^1.0.9",
     "react-static-container": "1.0.1"
   },
+  "deprecated": false,
+  "description": "React Native Router using Flux architecture",
   "devDependencies": {
     "babel-core": "^6.7.6",
     "babel-eslint": "^6.1.0",
@@ -63,5 +59,87 @@
     "react-native": "0.26.x",
     "react-native-mock": "0.2.0",
     "sinon": "^1.17.3"
+  },
+  "homepage": "https://github.com/aksonov/react-native-router-flux#readme",
+  "keywords": [
+    "react-native",
+    "react-native-router",
+    "react-components",
+    "react-component",
+    "ios",
+    "android",
+    "flux",
+    "router",
+    "navigation"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "aksonov",
+      "email": "pavlo.aksonov@gmail.com"
+    }
+  ],
+  "name": "react-native-router-flux",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aksonov/react-native-router-flux.git"
+  },
+  "scripts": {
+    "eslint": "eslint index.js src/ test/; exit 0;",
+    "test": "mocha --compilers js:babel-core/register --require react-native-mock/mock",
+    "test:watch": "npm run test -- --watch"
+  },
+  "typings": "index.d.ts",
+  "version": "3.36.0",
+  "react-native": {
+    "zlib": "browserify-zlib",
+    "console": "console-browserify",
+    "constants": "constants-browserify",
+    "crypto": "react-native-crypto",
+    "dns": "dns.js",
+    "net": "react-native-tcp",
+    "domain": "domain-browser",
+    "http": "react-native-http",
+    "https": "https-browserify",
+    "os": "react-native-os",
+    "path": "path-browserify",
+    "querystring": "querystring-es3",
+    "fs": "react-native-level-fs",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "dgram": "react-native-udp",
+    "stream": "stream-browserify",
+    "timers": "timers-browserify",
+    "tty": "tty-browserify",
+    "vm": "vm-browserify"
+  },
+  "browser": {
+    "zlib": "browserify-zlib",
+    "console": "console-browserify",
+    "constants": "constants-browserify",
+    "crypto": "react-native-crypto",
+    "dns": "dns.js",
+    "net": "react-native-tcp",
+    "domain": "domain-browser",
+    "http": "react-native-http",
+    "https": "https-browserify",
+    "os": "react-native-os",
+    "path": "path-browserify",
+    "querystring": "querystring-es3",
+    "fs": "react-native-level-fs",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "dgram": "react-native-udp",
+    "stream": "stream-browserify",
+    "timers": "timers-browserify",
+    "tty": "tty-browserify",
+    "vm": "vm-browserify"
   }
 }

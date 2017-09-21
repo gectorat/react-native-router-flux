@@ -301,7 +301,7 @@ class NavBar extends React.Component {
 
       const textStyle = [styles.barRightButtonText, self.props.rightButtonTextStyle,
         state.rightButtonTextStyle];
-        const textRightStyle = {fontSize: 14, left: 44, top:8, width: 40, color: 'rgb(76,143,167)'}
+      const textRightStyle = {fontSize: 14, left: 44, top:8, width: 40, color: 'rgb(76,143,167)'}
       const style = [styles.rightButton, self.props.rightButtonStyle, state.rightButtonStyle];
       if (state.rightButton) {
         let Button = state.rightButton;
@@ -467,7 +467,8 @@ class NavBar extends React.Component {
             childState.titleStyle,
             {
               textAlign: (this.props.scenes.constructor == Array) ? 'left' : 'center',
-              height: 30,
+              height: 38,
+              lineHeight: 22,
               width: (this.props.scenes.constructor == Array) ?
                 ((Platform.OS === 'ios') ? Math.ceil(Dimensions.get('window').width * 0.55) : Math.ceil(Dimensions.get('window').width * 0.85)) :
                 Dimensions.get('window').width,
